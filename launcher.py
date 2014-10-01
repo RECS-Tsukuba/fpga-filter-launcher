@@ -26,7 +26,7 @@ def launch_impl(filename, image_size, is_with_source,
 #
 #    subprocess.call(command)
 
-    command = ["./bin/core",
+    command = ["../core//bin/core",
                "--filename=" + filename,
                "--image-size=" + image_size.get(),
                "--frequency=" + frequency.get(),
@@ -103,26 +103,26 @@ def main_impl():
     tkinter.Radiobutton(text='40MHz', variable=frequency, value="40") \
            .grid(row=3, column=3, padx=padding, pady=padding, sticky=tkinter.W)
 
-    tkinter.Label(launcher_frame, text='色') \
-           .grid(row=4, column=0, padx=padding, pady=padding, sticky=tkinter.W)
-    tkinter.Radiobutton(text='グレースケール', variable=is_colored, value="0") \
-           .grid(row=4, column=1, padx=padding, pady=padding, sticky=tkinter.W)
-    tkinter.Radiobutton(text='RGBA', variable=is_colored, value="1") \
-           .grid(row=4, column=2, padx=padding, pady=padding, sticky=tkinter.W)
+#    tkinter.Label(launcher_frame, text='色') \
+#           .grid(row=4, column=0, padx=padding, pady=padding, sticky=tkinter.W)
+#    tkinter.Radiobutton(text='グレースケール', variable=is_colored, value="0") \
+#           .grid(row=4, column=1, padx=padding, pady=padding, sticky=tkinter.W)
+#    tkinter.Radiobutton(text='RGBA', variable=is_colored, value="1") \
+#           .grid(row=4, column=2, padx=padding, pady=padding, sticky=tkinter.W)
 
     tkinter.Label(launcher_frame, text='補間') \
-           .grid(row=5, column=0, padx=padding, pady=padding, sticky=tkinter.W)
+           .grid(row=4, column=0, padx=padding, pady=padding, sticky=tkinter.W)
     tkinter.Radiobutton(text='最近傍', variable=interpolation, value="nearest") \
-           .grid(row=5, column=1, padx=padding, pady=padding, sticky=tkinter.W)
+           .grid(row=4, column=1, padx=padding, pady=padding, sticky=tkinter.W)
     tkinter.Radiobutton(text='線形', variable=interpolation, value="linear") \
-           .grid(row=5, column=2, padx=padding, pady=padding, sticky=tkinter.W)
+           .grid(row=4, column=2, padx=padding, pady=padding, sticky=tkinter.W)
 
     tkinter.Button(launcher_frame, text='開始',
                    command=functools.partial(
                        launch,
                        launcher_frame, filename_label, image_size,
                        is_with_source, frequency, is_colored, interpolation)) \
-           .grid(row=6, column=0, padx=padding, pady=padding, sticky=tkinter.W)
+           .grid(row=5, column=0, padx=padding, pady=padding, sticky=tkinter.W)
 
     # Main loop
     launcher_frame.mainloop()
