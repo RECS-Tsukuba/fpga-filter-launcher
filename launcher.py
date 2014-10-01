@@ -16,16 +16,7 @@ def get_filename(root, label):
 
 def launch_impl(filename, image_size, is_with_source,
                 frequency, is_colored, interpolation):
-#    command = ["echo",
-#               "--filename=" + filename,
-#               "--image-size=" + image_size.get(),
-#               "--frequency=" + frequency.get(),
-#               "--interpolation=" + interpolation.get()]
-#    if is_colored.get() > 0:
-#        command.append("--colored")
-#
-#    subprocess.call(command)
-
+    # コマンドを生成
     command = ["../core//bin/core",
                "--filename=" + filename,
                "--image-size=" + image_size.get(),
@@ -35,7 +26,11 @@ def launch_impl(filename, image_size, is_with_source,
         command.append("--colored")
     if is_with_source.get() > 0:
         command.append("--show-source")
-
+    # コマンドを表示
+    for item in command:
+        print(item, end=" ")
+    print("")
+    # コマンドを実行
     subprocess.call(command)
 
 
