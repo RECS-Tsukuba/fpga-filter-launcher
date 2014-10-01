@@ -54,7 +54,7 @@ def main_impl():
     image_size = tkinter.StringVar()
     image_size.set("middle")
     is_with_source = tkinter.IntVar()
-    is_with_source.set(0)
+    is_with_source.set(1)
     frequency = tkinter.StringVar()
     frequency.set("40")
     is_colored = tkinter.IntVar()
