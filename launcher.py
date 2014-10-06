@@ -21,7 +21,8 @@ def launch_impl(filename, image_size, is_with_source,
                "--filename=" + filename,
                "--image-size=" + image_size.get(),
                "--frequency=" + frequency.get(),
-               "--interpolation=" + interpolation.get()]
+               "--interpolation=" + interpolation.get(),
+               "--output-directory=img"]
     if is_colored.get() > 0:
         command.append("--colored")
     if is_with_source.get() > 0:
