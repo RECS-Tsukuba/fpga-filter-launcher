@@ -92,11 +92,11 @@ def main_impl():
 
     tkinter.Label(launcher_frame, text='動作周波数') \
            .grid(row=3, column=0, padx=padding, pady=padding, sticky=tkinter.W)
-    tkinter.Radiobutton(text='20MHz', variable=frequency, value="20") \
+    tkinter.Radiobutton(text='25MHz', variable=frequency, value="25") \
            .grid(row=3, column=1, padx=padding, pady=padding, sticky=tkinter.W)
-    tkinter.Radiobutton(text='30MHz', variable=frequency, value="30") \
-           .grid(row=3, column=2, padx=padding, pady=padding, sticky=tkinter.W)
     tkinter.Radiobutton(text='40MHz', variable=frequency, value="40") \
+           .grid(row=3, column=2, padx=padding, pady=padding, sticky=tkinter.W)
+    tkinter.Radiobutton(text='60MHz', variable=frequency, value="60") \
            .grid(row=3, column=3, padx=padding, pady=padding, sticky=tkinter.W)
 
 #    tkinter.Label(launcher_frame, text='色') \
